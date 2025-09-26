@@ -1,0 +1,265 @@
+/* GENERAL STYLE */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 15px;
+  background: #f5f0dc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* PAGE STYLE */
+.page {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.page.active {
+  display: flex;
+}
+
+/* FONT COLOR BIRU TUA */
+h1, p {
+  color: #003366; /* biru tua */
+}
+
+h1 {
+  font-family: 'Archivo Black', sans-serif; /* ganti font khusus h1 */
+  font-size: 1.5em; /* kecilkan ukurannya */
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+
+p {
+  font-size: 1em;
+  margin: 10px 0;
+  font-family: 'Alan Sans', sans-serif; /* ganti sesuai font yang kamu mau */
+  font-weight: 500; /* bikin agak tebal */
+}
+
+
+button {
+  margin-top: 30px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 30px;
+  background-color: #003366; /* biru tua */
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500; /* tipis elegan */
+}
+
+button:hover {
+  background-color: #0055aa;
+}
+
+/* GIF STYLE - buat nengah */
+.gif {
+  width: 200px;
+  max-width: 80%;
+  margin: 0 auto 20px auto; /* auto kiri kanan biar tengah */
+  display: block; /* biar margin auto jalan */
+}
+
+/* PAGE 4 */
+.page#page4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* teks di tengah secara vertikal */
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Khusus judul di page 4 */
+.page#page4 h1 {
+  font-size: 2.2em; /* lebih kecil dari default 3em di desktop */
+  margin-bottom: 15px;
+}
+
+/* LETTER (page 4) */
+.letter-scroll {
+  width: 60%; /* lebih sempit, biar terlihat lebih elegant di laptop */
+  max-width: 1000px;
+  max-height: 400px; /* bisa disesuaikan */
+  overflow-y: scroll; /* bisa scroll */
+  padding: 20px;
+  border: 2px solid #003366;
+  border-radius: 10px;
+  background: #fff;
+  font-family: 'Josefin sans', sans-serif; /* ganti font */
+  font-weight: 800; /* tipis elegan */
+  color: #003366; /* biru tua */
+  line-height: 1.6;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateX(-100%);
+  box-shadow: 6px 6px 0px #99badd, 12px 12px 0px #6688aa;
+}
+
+/* class ini ditambah via JS pas page 4 muncul */
+.letter-show {
+  animation: slideIn 0.2s ease forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  } 
+}
+
+.confetti-gif {
+  position: fixed; /* biar nutup semua layar */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 9999; /* biar di atas semua */
+  pointer-events: none; /* biar ga ganggu klik */
+}
+
+
+/* ANIMASI LOVE FALL */
+.love {
+  position: fixed;
+  top: -50px;
+  font-size: 24px;
+  animation: fall linear forwards;
+}
+
+/* Transition smooth antar page */
+.page {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.page.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-out {
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* Responsif untuk layar kecil (HP) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2em; /* agak gede dari default */
+  }
+
+  p {
+    font-size: 1.2em; /* biar enak dibaca */
+  }
+
+  button {
+    font-size: 1.1em;
+    padding: 10px 25px; /* tombol lebih enak di-tap */
+  }
+
+  .letter-scroll {
+    width: 90%;  /* biar penuh di HP */
+    max-width: none;
+    font-size: 1.1em; /* isi suratnya juga gede */
+  }
+
+  .gif {
+    width: 150px; /* lebih kecil biar pas di layar kecil */
+    max-width: 70%;
+  }
+}
+
+/* Responsif untuk layar sangat kecil (misal HP lama < 480px) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5em; 
+  }
+
+  p, .letter-scroll {
+    font-size: 1.3em;
+  }
+
+  button {
+    font-size: 1.2em;
+    padding: 12px 30px;
+  }
+
+  .gif {
+    width: 120px;
+    max-width: 80%;
+  }
+}
+
+/* Responsif untuk layar besar (Laptop / Desktop) */
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3em;  /* judul lebih besar */
+  }
+
+  p {
+    font-size: 1.3em;  /* teks lebih enak dibaca */
+  }
+
+  .letter-scroll {
+    font-size: 1.2em; /* isi surat juga ikut gede */
+  }
+
+  .gif {
+    width: 250px; /* biar nggak kecil di layar gede */
+  }
+}
+
+@media (max-width: 768px) {
+  .page#page4 h1 {
+    font-size: 2em;
+  }
+  .page#page4 p {
+    font-size: 1em;
+  }
+}
+
+
+

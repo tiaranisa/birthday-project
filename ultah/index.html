@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>happy b'day kak utaaa</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/lopee.png">
+
+</head>
+
+<body>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <img src="assets/snoopy.gif" alt="Gif 1" class="gif">
+    <h1>Happy Birthday Kak Utaaaa!!!! 🎉</h1>
+    <p>Aku punya sesuatu loh buat kakak... click to find out✨</p>
+    <button onclick="showPage(2)">tap</button>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="page" id="page2">
+    <img src="assets/gif2.gif" alt="Gif 2" class="gif">
+    <p>Tapi sebelumnya maaf ya kakk aku gabisa kasih kado wkwkwk, lagian kakak jauh sihh (⁠╥⁠﹏⁠╥⁠)</p>
+    <button onclick="showPage(3)">Next</button>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="page" id="page3">
+    <img src="assets/envelope.gif" alt="Amplop" class="gif">
+    <p>Jadi aku cuman bisa buatin ini dan nulis surat yang spesial buat kakakkk, read it slowly ya kakkk!</p>
+    <button onclick="goToPage4()">open It</button>
+  </div>
+
+  <!-- PAGE 4 -->
+  <div class="page" id="page4">
+    <img src="assets/snoopy2.gif" alt="Gif 4" class="gif">
+    <h1>A wish for you on your birthday (⁠≧⁠▽⁠≦⁠) 🎂</h1>
+    <div class="letter-container">
+      <div class="letter-scroll">
+        Happy 20th, kak utaaaa! 🎉
+        Selamat menikmati bab baru di hidupmu kakkk. Aku berdoa semoga di usia baru ini, kakak selalu punya alasan buat
+        tersenyum setiap hari, ketemu hal-hal yang bikin hati hangat, dan semangat buat ngejar semua mimpi yang lagi
+        dijalanin.
+
+        Semoga semua kerjaan kakak lancar-lancar aja, nggak bikin pusing, dan setiap hari kakak bisa pulang dengan aman
+        tanpa rasa capek yang berlebihan. Semoga setiap hal yang kakak kerjain gampang selesai dan selalu ada
+        perlindungan supaya kakak tetap sehat, kuat, dan semangat terus. Tetap jadi pribadi yang positif dan inspiratif
+        ya kak, soalnya energi baik kakak bikin orang lain nyaman cuma dengan adanya kak utaaa. Dan serius deh kak,
+        rambut curly kakak tuh selalu bikin mata orang nggak bisa lepas, plus senyumnya kakak yang manis banget, jadi
+        nggak usah ribet soal kulit gelapnya, karena justru itu bikin kakak makin unik dan charming 😏.
+
+        Oh iya, kakak juga jangan lupa buat sesekali istirahat dan nggak terlalu memaksakan diri ya. Kadang kita saking
+        semangatnya ngejar semua hal sampai lupa sama diri sendiri. Aku tau kakak suka nongkrong buat ngilangin penat,
+        dan itu wajar banget, tapi jangan sampai kebiasaan pulang larut tiap malam kak, nanti bisa bikin tubuh tambah
+        capek. Jadi santai aja, nikmati prosesnya, dan ingat buat selalu jaga diri sendiri ya kakkk.
+
+        Jangan lupa selalu percaya sama diri sendiri, karena kakak mampu melewati apapun dan layak dapetin semua hal-hal
+        baik di hidup ini. May Allah grant u when your heart truly desires. Sekali lagi, happy birthday, kak utaaaaa!
+        from: tiara
+      </div>
+    </div>
+  </div>
+
+
+  <!-- BACKSOUND -->
+  <audio id="backsound" src="../assets/backsound.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
