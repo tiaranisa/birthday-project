@@ -114,7 +114,7 @@ button:hover {
 
 /* LETTER (page 4) */
 .letter-scroll {
-  height: auto; 
+  height: 400px; 
   width: 90%;
   max-width: 1000px;
   max-height: 80vh; 

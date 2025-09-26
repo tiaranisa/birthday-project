@@ -68,15 +68,14 @@ function typeWriterEffect() {
 
   function type() {
     if (pIndex < paragraphs.length) {
-      // bikin <p> baru sesuai paragraf
       if (!letterBox.querySelectorAll("p")[pIndex]) {
         const newP = document.createElement("p");
-        newP.className = paragraphs[pIndex].className; // copy class, misal from-text
+        newP.className = paragraphs[pIndex].className;
         letterBox.appendChild(newP);
       }
 
       const currentP = letterBox.querySelectorAll("p")[pIndex];
-      const text = paragraphs[pIndex].innerHTML; // pakai innerHTML biar <br> atau styling tetap ada
+      const text = paragraphs[pIndex].innerHTML; 
 
       if (charIndex < text.length) {
         currentP.innerHTML += text.charAt(charIndex);
