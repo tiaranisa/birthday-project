@@ -242,7 +242,9 @@ button {
   width: 180px;
 }
 .letter-scroll {
-  font-size: 0.9em;
+  font-size: 1em;
+  height: 300px; /* sedikit lebih kecil biar pas di layar HP */
+  width: 95%;     /* lebih lebar, tapi masih ada padding */
 }
 
 /* Tablet (>=768px) */
