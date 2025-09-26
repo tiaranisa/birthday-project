@@ -58,24 +58,41 @@ function startLoveAnimation() {
 // efek ketik surat
 function typeWriterEffect() {
   const letterBox = document.querySelector(".letter-scroll");
-  const text = letterBox.innerHTML; // ambil isi asli
-  letterBox.innerHTML = ""; // kosongin dulu
+  const paragraphs = [...letterBox.querySelectorAll("p")]; // ambil semua <p>
 
-  // kasih class biar animasi slideIn jalan
+  letterBox.innerHTML = ""; // kosongin dulu
   letterBox.classList.add("letter-show");
 
-  let i = 0;
+  let pIndex = 0;
+  let charIndex = 0;
+
   function type() {
-    if (i < text.length) {
-      letterBox.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, 35); // speed ketik
+    if (pIndex < paragraphs.length) {
+      // bikin <p> baru sesuai paragraf
+      if (!letterBox.querySelectorAll("p")[pIndex]) {
+        const newP = document.createElement("p");
+        newP.className = paragraphs[pIndex].className; // copy class, misal from-text
+        letterBox.appendChild(newP);
+      }
+
+      const currentP = letterBox.querySelectorAll("p")[pIndex];
+      const text = paragraphs[pIndex].innerHTML; // pakai innerHTML biar <br> atau styling tetap ada
+
+      if (charIndex < text.length) {
+        currentP.innerHTML += text.charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 35); // speed ketik
+      } else {
+        charIndex = 0;
+        pIndex++;
+        setTimeout(type, 200); // jeda antar paragraf
+      }
     }
   }
 
-  // langsung jalan tanpa delay
   type();
 }
+
 
 function goToPage4() {
   // langsung tampilkan page 4
