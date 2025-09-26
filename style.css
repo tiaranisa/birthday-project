@@ -246,7 +246,13 @@ button {
   padding: 10px 12px;
   height: 300px; /* sedikit lebih kecil biar pas di layar HP */
   width: 100%;     /* lebih lebar, tapi masih ada padding */
+  box-sizing: border-box;
 }
+.letter-scroll p {
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 0 5px; /* teks lebih rapat ke border */
+  }
 
 /* Tablet (>=768px) */
 @media (min-width: 768px) {
