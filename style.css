@@ -1,4 +1,6 @@
-/* GENERAL STYLE */
+/* =======================
+   GENERAL STYLE
+======================= */
 body {
   margin: 0;
   padding: 0;
@@ -12,7 +14,9 @@ body {
   overflow: hidden;
 }
 
-/* PAGE STYLE */
+/* =======================
+   PAGE STYLE
+======================= */
 .page {
   display: none;
   flex-direction: column;
@@ -21,89 +25,97 @@ body {
   width: 100%;
   height: 100%;
   text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 .page.active {
   display: flex;
+  opacity: 1;
+  visibility: visible;
+  position: relative;
 }
 
-/* FONT COLOR BIRU TUA */
+/* =======================
+   FONT STYLE
+======================= */
 h1, p {
   color: #003366; /* biru tua */
 }
 
 h1 {
-  font-family: 'Archivo Black', sans-serif; /* ganti font khusus h1 */
-  font-size: 1.5em; /* kecilkan ukurannya */
+  font-family: 'Archivo Black', sans-serif;
   font-weight: bold;
   margin: 20px 0;
 }
 
-
 p {
-  font-size: 1em;
   margin: 10px 0;
-  font-family: 'Alan Sans', sans-serif; /* ganti sesuai font yang kamu mau */
-  font-weight: 500; /* bikin agak tebal */
+  font-family: 'Alan Sans', sans-serif;
+  font-weight: 500;
 }
 
-
+/* =======================
+   BUTTON STYLE
+======================= */
 button {
   margin-top: 30px;
   padding: 10px 40px;
   border: none;
   border-radius: 30px;
-  background-color: #003366; /* biru tua */
+  background-color: #003366;
   color: white;
-  font-size: 1.2em;
   cursor: pointer;
   transition: 0.3s;
   font-family: 'Poppins', sans-serif;
-  font-weight: 500; /* tipis elegan */
+  font-weight: 500;
 }
 
 button:hover {
   background-color: #0055aa;
 }
 
-/* GIF STYLE - buat nengah */
+/* =======================
+   GIF STYLE
+======================= */
 .gif {
-  width: 200px;
-  max-width: 80%;
-  margin: 0 auto 20px auto; /* auto kiri kanan biar tengah */
-  display: block; /* biar margin auto jalan */
+  margin: 0 auto 20px auto;
+  display: block;
+  max-width: 90%;
 }
 
-/* PAGE 4 */
+/* =======================
+   PAGE 4 SPECIAL
+======================= */
 .page#page4 {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* teks di tengah secara vertikal */
+  justify-content: center;
   align-items: center;
   padding: 20px;
   height: 100%;
   box-sizing: border-box;
 }
 
-/* Khusus judul di page 4 */
 .page#page4 h1 {
-  font-size: 2.2em; /* lebih kecil dari default 3em di desktop */
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /* LETTER (page 4) */
 .letter-scroll {
-  width: 60%; /* lebih sempit, biar terlihat lebih elegant di laptop */
+  width: 90%;
   max-width: 1000px;
-  max-height: 400px; /* bisa disesuaikan */
-  overflow-y: scroll; /* bisa scroll */
+  max-height: 400px;
+  overflow-y: scroll;
   padding: 20px;
   border: 2px solid #003366;
   border-radius: 10px;
   background: #fff;
-  font-family: 'Josefin sans', sans-serif; /* ganti font */
-  font-weight: 800; /* tipis elegan */
-  color: #003366; /* biru tua */
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 800;
+  color: #003366;
   line-height: 1.6;
   margin: 0 auto;
   opacity: 0;
@@ -111,7 +123,7 @@ button:hover {
   box-shadow: 6px 6px 0px #99badd, 12px 12px 0px #6688aa;
 }
 
-/* class ini ditambah via JS pas page 4 muncul */
+/* animasi muncul surat */
 .letter-show {
   animation: slideIn 0.2s ease forwards;
 }
@@ -123,20 +135,24 @@ button:hover {
   } 
 }
 
+/* =======================
+   CONFETTI
+======================= */
 .confetti-gif {
-  position: fixed; /* biar nutup semua layar */
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: 9999; /* biar di atas semua */
-  pointer-events: none; /* biar ga ganggu klik */
+  z-index: 9999;
+  pointer-events: none;
 }
 
-
-/* ANIMASI LOVE FALL */
+/* =======================
+   LOVE FALL
+======================= */
 .love {
   position: fixed;
   top: -50px;
@@ -144,20 +160,16 @@ button:hover {
   animation: fall linear forwards;
 }
 
-/* Transition smooth antar page */
-.page {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
 }
 
-.page.active {
-  opacity: 1;
-  visibility: visible;
-  position: relative;
-}
-
+/* =======================
+   ANIMASI TRANSISI PAGE
+======================= */
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.8s forwards;
@@ -177,89 +189,67 @@ button:hover {
   to { opacity: 0; }
 }
 
+/* =======================
+   RESPONSIVE
+   MOBILE FIRST
+======================= */
 
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
+/* Default (HP kecil) */
+h1 {
+  font-size: 1.4em;
+}
+p {
+  font-size: 0.9em;
+}
+button {
+  font-size: 1em;
+  padding: 8px 20px;
+}
+.gif {
+  width: 180px;
+}
+.letter-scroll {
+  font-size: 0.9em;
 }
 
-/* Responsif untuk layar kecil (HP) */
-@media (max-width: 768px) {
+/* Tablet (>=768px) */
+@media (min-width: 768px) {
   h1 {
-    font-size: 2.2em; /* agak gede dari default */
+    font-size: 2em;
   }
-
   p {
-    font-size: 1.2em; /* biar enak dibaca */
+    font-size: 1.1em;
   }
-
   button {
     font-size: 1.1em;
-    padding: 10px 25px; /* tombol lebih enak di-tap */
+    padding: 10px 25px;
   }
-
-  .letter-scroll {
-    width: 90%;  /* biar penuh di HP */
-    max-width: none;
-    font-size: 1.1em; /* isi suratnya juga gede */
-  }
-
   .gif {
-    width: 150px; /* lebih kecil biar pas di layar kecil */
-    max-width: 70%;
+    width: 220px;
+  }
+  .letter-scroll {
+    font-size: 1em;
+    width: 80%;
   }
 }
 
-/* Responsif untuk layar sangat kecil (misal HP lama < 480px) */
-@media (max-width: 480px) {
+/* Desktop (>=1024px) */
+@media (min-width: 1024px) {
   h1 {
-    font-size: 2.5em; 
+    font-size: 2.5em;
   }
-
-  p, .letter-scroll {
-    font-size: 1.3em;
+  p {
+    font-size: 1.2em;
   }
-
   button {
     font-size: 1.2em;
     padding: 12px 30px;
   }
-
   .gif {
-    width: 120px;
-    max-width: 80%;
+    width: 250px;
   }
-}
-
-/* Responsif untuk layar besar (Laptop / Desktop) */
-@media (min-width: 1024px) {
-  h1 {
-    font-size: 3em;  /* judul lebih besar */
-  }
-
-  p {
-    font-size: 1.3em;  /* teks lebih enak dibaca */
-  }
-
   .letter-scroll {
-    font-size: 1.2em; /* isi surat juga ikut gede */
-  }
-
-  .gif {
-    width: 250px; /* biar nggak kecil di layar gede */
+    font-size: 1.1em;
+    width: 60%;
   }
 }
-
-@media (max-width: 768px) {
-  .page#page4 h1 {
-    font-size: 2em;
-  }
-  .page#page4 p {
-    font-size: 1em;
-  }
-}
-
-
-
