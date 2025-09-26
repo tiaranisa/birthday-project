@@ -73,23 +73,23 @@ function typeWriterEffect() {
     }
   }
 
-  // delay dikit biar slideIn dulu baru ketik
-  setTimeout(type, 800);
+  // langsung jalan tanpa delay
+  type();
 }
 
 function goToPage4() {
-  // langsung tampilkan page 4 dulu
+  // langsung tampilkan page 4
   showPage(4);
 
-  // bikin element img untuk confetti
+  // langsung munculin confetti bareng
   const confetti = document.createElement("img");
-  confetti.src = "assets/confetti.gif"; // ganti dengan path gif confetti kamu
+  confetti.src = "assets/confetti.gif";
   confetti.classList.add("confetti-gif");
   document.body.appendChild(confetti);
 
-  // tunggu 1 detik biar confetti keliatan, habis itu hapus
+  // hapus confetti setelah durasi gif selesai
   setTimeout(() => {
     confetti.remove();
-  }, 1000); // atur sesuai durasi gif
+  }, 1000);
 }
 

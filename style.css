@@ -55,6 +55,14 @@ p {
   margin: 10px 0;
   font-family: 'Alan Sans', sans-serif;
   font-weight: 500;
+  line-height: 1.6;
+  padding: 0 12px; /* kasih jarak kanan-kiri */
+}
+
+#page3 p {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 /* =======================
@@ -121,6 +129,8 @@ button:hover {
   opacity: 0;
   transform: translateX(-100%);
   box-shadow: 6px 6px 0px #99badd, 12px 12px 0px #6688aa;
+  padding-bottom: 40px; /* kasih ruang bawah biar nggak kepotong */
+  -webkit-overflow-scrolling: touch; /* biar smooth di iOS/HP */
 }
 
 /* animasi muncul surat */
@@ -199,7 +209,9 @@ h1 {
   font-size: 1.4em;
 }
 p {
-  font-size: 0.9em;
+  font-size: 1em;       /* diganti dari 0.9em */
+  line-height: 1.6;     /* biar lebih enak dibaca */
+  padding: 0 12px;      /* jarak kanan kiri biar gak mepet */
 }
 button {
   font-size: 1em;
