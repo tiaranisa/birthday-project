@@ -20,14 +20,6 @@ function showPage(pageNum) {
         next.classList.remove("fade-in");
       }, { once: true });
 
-      // khusus page 4
-      if (pageNum === 4) {
-        const audio = document.getElementById("backsound");
-        audio.play();
-        audio.loop = true;
-        startLoveAnimation();
-        typeWriterEffect();
-      }
     }, 800); // sama kayak durasi transition di CSS
   } else {
     next.classList.add("active");
@@ -94,18 +86,36 @@ function typeWriterEffect() {
 
 
 function goToPage4() {
-  // langsung tampilkan page 4
-  showPage(4);
+  // langsung aktifkan page 4 tanpa fade-in
+  const current = document.querySelector(".page.active");
+  const next = document.getElementById("page4");
 
-  // langsung munculin confetti bareng
+  if (current) {
+    current.classList.remove("active", "fade-out");
+  }
+  next.classList.add("active");
+
+  // play backsound barengan
+  const audio = document.getElementById("backsound");
+  if (audio) {
+    audio.currentTime = 0; // mulai dari awal
+    audio.play().catch(err => {
+      console.log("Autoplay diblokir, user harus klik dulu:", err);
+    });
+    audio.loop = true;
+  }
+
+  // munculin confetti
   const confetti = document.createElement("img");
   confetti.src = "assets/confetti.gif";
   confetti.classList.add("confetti-gif");
   document.body.appendChild(confetti);
 
-  // hapus confetti setelah durasi gif selesai
   setTimeout(() => {
     confetti.remove();
-  }, 1000);
-}
+  }, 2000);
 
+  // mulai animasi love + efek ketik
+  startLoveAnimation();
+  typeWriterEffect();
+}
